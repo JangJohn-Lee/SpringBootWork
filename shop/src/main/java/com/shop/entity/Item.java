@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-public class Item {
+public class Item extends BaseEntity{
 
     @Id
     @Column(name="item_id")
@@ -37,7 +37,9 @@ public class Item {
     @Enumerated(EnumType.STRING)
     private ItemSellStatus itemSellStatus;   //상품 판매 상태
 
-    private LocalDateTime regTime;           //등록 시간
-
-    private LocalDateTime updateTime;        //수정시간
+//    private LocalDateTime regTime;           //등록 시간
+//
+//    private LocalDateTime updateTime;        //수정시간
+    // BaseEntity를 extends 받아 Auditing을 하여 등록시간및 수정시간을 입력해줄수 있으므로
+    // 해당 필드값은 없어도됨
 }
