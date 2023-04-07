@@ -58,16 +58,16 @@ public class ItemController {
         return "redirect:/";
     }
 
-//    @GetMapping(value="/admin/item/{itemId}")
-//    public String itemDtl(@PathVariable("itemId") Long itemId, Model model){
-//
-//        try{
-//            ItemFormDto itemFormDto = itemService.getItemDtl(itemId);
-//            model.addAttribute("itemFormDto", itemFormDto);
-//        }catch(EntityNotFoundException e){
-//
-//        }
-//    }
+    @GetMapping(value="/admin/item/{itemId}")
+    public String itemDtl(@PathVariable("itemId") Long itemId, Model model){
+
+        try{
+            ItemFormDto itemFormDto = itemService.getItemDtl(itemId);
+            model.addAttribute("itemFormDto", itemFormDto);
+        }catch(EntityNotFoundException e){
+
+        }
+    }
 
 
 }
