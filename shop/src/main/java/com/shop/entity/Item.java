@@ -1,6 +1,7 @@
 package com.shop.entity;
 
 import com.shop.constant.ItemSellStatus;
+import com.shop.dto.ItemFormDto;
 import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
@@ -42,4 +43,12 @@ public class Item extends BaseEntity{
 //    private LocalDateTime updateTime;        //수정시간
     // BaseEntity를 extends 받아 Auditing을 하여 등록시간및 수정시간을 입력해줄수 있으므로
     // 해당 필드값은 없어도됨
+
+    public void updateItem(ItemFormDto itemFormDto){
+        this.itemNm = itemFormDto.getItemNm();
+        this.price = itemFormDto.getPrice();
+        this.stockNumber = itemFormDto.getStockNumber();
+        this.itemDetail = itemFormDto.getItemDetail();
+        this.itemSellStatus = itemFormDto.getItemSellStatus();
+    }
 }
